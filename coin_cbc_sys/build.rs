@@ -35,12 +35,6 @@ fn main() {
                 .status()
                 .unwrap();
 
-            if cfg!(target_os = "macos") {
-                println!("cargo:rustc-link-lib=c++");
-            } else if cfg!(target_os = "linux") {
-                println!("cargo:rustc-link-lib=static=stdc++");
-            }
-
             system_deps::Library::from_internal_pkg_config(
                 format!("{}/lib/pkgconfig", dest_dir),
                 lib,
