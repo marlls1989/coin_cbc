@@ -22,7 +22,7 @@ pub type cbc_callback = Option<
     ),
 >;
 
-#[link(name = "CbcSolver")]
+#[link(name = "CbcSolver", kind = "static")]
 extern "C" {
     pub fn Cbc_newModel() -> *mut Cbc_Model;
     pub fn Cbc_deleteModel(model: *mut Cbc_Model);
