@@ -19,9 +19,12 @@ fn main() {
             "Cbc",
             "--static",
             "--no-prompt",
+            "--tests=none",
             &format!("--parallel-jobs={}", cores),
             &format!("--prefix={}", dist_dir),
-            "ADD_FFLAGS=-fallow-argument-mismatch",
+            "ADD_FFLAGS=-fallow-argument-mismatch -fPIC",
+            "ADD_CFLAGS=-fPIC",
+            "ADD_CXXFLAGS=-fPIC",
         ])
         .current_dir(&Path::new(&deps_dir))
         .status()
