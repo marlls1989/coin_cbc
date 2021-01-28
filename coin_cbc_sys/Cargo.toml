@@ -12,3 +12,7 @@ license = "MIT "
 
 [build-dependencies]
 num_cpus = "~1.13.0"
+system-deps = "~2.0.3"
+
+[package.metadata.system-deps]
+cbc = "2.9.9"
