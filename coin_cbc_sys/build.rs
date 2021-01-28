@@ -7,7 +7,7 @@ fn main() {
     let src_dir = env::var("CARGO_MANIFEST_DIR").unwrap();
 
     let deps_dir = format!("{}/deps", src_dir);
-    let dist_dir = format!("{}/dist", out_dir);
+    let dist_dir = format!("{}/cbc", out_dir);
     Command::new(&format!("{}/coinbrew", deps_dir))
         .args(&["fetch", "Cbc@2.10.5"])
         .current_dir(&Path::new(&deps_dir))
@@ -18,7 +18,7 @@ fn main() {
             "build",
             "Cbc",
             "--static",
-            "--reconfigure",
+            "--no-prompt",
             &format!("--parallel-jobs={}", cores),
             &format!("--prefix={}", dist_dir),
             "ADD_FFLAGS=-fallow-argument-mismatch",
