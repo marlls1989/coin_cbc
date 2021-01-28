@@ -3,9 +3,9 @@ use std::{env, path::Path, process::Command};
 use system_deps;
 
 fn main() {
-    #[cfg(feature = "embedded_cbc")]
-    {
+    if cfg!(feature = "embedded_cbc") {
         env::set_var("SYSTEM_DEPS_CBC_BUILD_INTERNAL", "always");
+        env::set_var("CBC_STATIC", "1");
     }
 
     system_deps::Config::new()
