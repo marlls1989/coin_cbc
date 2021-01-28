@@ -14,5 +14,8 @@ license = "MIT "
 num_cpus = "~1.13.0"
 system-deps = "~2.0.3"
 
+[features]
+embedded_cbc = []
+
 [package.metadata.system-deps]
 cbc = "2.9.9"

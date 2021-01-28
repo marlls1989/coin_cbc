@@ -14,5 +14,8 @@ readme = "README.md"
 [workspace]
 members = ["coin_cbc_sys"]
 
+[features]
+embedded_cbc = ["coin_cbc_sys/embedded_cbc"]
+
 [dependencies]
 coin_cbc_sys = { version = "0.1", path = "coin_cbc_sys" }
